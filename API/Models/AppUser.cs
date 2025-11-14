@@ -5,6 +5,9 @@ namespace API.Models;
  public class AppUser
     {
         public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
+        public required string Name { get; set; } 
+        public required string Email { get; set; } 
+
+        public required byte[] PasswordHash { get; set; }
+        public required byte[] PasswordSalt { get; set; }
     }

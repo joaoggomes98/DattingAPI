@@ -1,14 +1,14 @@
 using API.Data;
 using API.Models;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")] //localhost:5001/api/members
-    [ApiController]
-    public class MembersController(AppDbContext context) : ControllerBase
+     //localhost:5001/api/members
+    [Authorize]
+    public class MembersController(AppDbContext context) : BaseApiController
     {
 
         [HttpGet]
